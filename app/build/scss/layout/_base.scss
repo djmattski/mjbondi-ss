@@ -1,0 +1,19 @@
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $body-bg;
+  margin: 0;
+  overflow-x: hidden;
+}

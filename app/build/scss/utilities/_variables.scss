@@ -1,0 +1,144 @@
+/*
+Global Variables
+Contents: 
+
+1.  Imports
+2.  Colour variables
+3.  Environment variables
+4.  Theme colours
+5.  Radii and other global css3 style properties
+6.  Link colours
+7.  Tables
+8.  Max page widths applied to container elements
+*/
+
+/* 
+1.  Imports
+*/
+
+/* 
+2.  Colour variables
+Put the colours from the design here. When naming your colours 
+be sure to use  http://chir.ag/projects/name-that-color to get 
+a proper colour name 
+*/
+
+// branding colors
+
+// greys
+$color-desert-storm: #f0f0ef;
+$color-concrete: #f3f3f3;
+$color-silver: #ccc;
+$color-alto: #dcdcdc;
+$color-emperor: #555;
+$color-dove-gray: #666;
+$color-pale-sky: #6c7781;
+$color-dusty-gray: #999;
+
+// alert colors
+
+
+// Easing
+$default-transition-duration: 0.2s;
+$ease-out-sine: cubic-bezier(0.39, 0.58, 0.57, 1);
+$ease-out-cubic: cubic-bezier(0.22, 0.61, 0.36, 1);
+$ease-bounce: cubic-bezier(0.6, 0, 0.5, 1.7);
+
+/* 
+3.  Environment variables
+Environment variables. Note some projects put all css into assets,
+so the path needs to be able to find the css from there 
+*/
+
+$base-font-size: 14px;
+$font: 'Open Sans', 'helvetica neue', helvetica, arial, sans-serif;
+
+/* 
+4.  Theme colours
+Make sure that the colours assigned here are assigned using the 
+colour variables above (unless black or white of course)
+*/
+
+$default-color: #fff;
+
+$primary-color: #c90;
+$secondary-color: #d34;
+$tertiary-color: #ef3;
+
+$success-color: #ac2;
+$success-background-color: #ab3;
+$success-border-color: #ab7;
+
+/* $error-color: $color-amaranth;
+$error-background-color: $color-carousel-pink;
+$error-border-color: $color-can-can;
+
+$warning-color: $error-color;
+
+$link-color: $secondary-color;
+$link-hover-color: $tertiary-color;
+$link-visited-color: $secondary-color; */
+$body-bg: $default-color;
+$font-color: $color-dove-gray;
+
+/* 
+5.  Radii and other global css3 style properties 	
+*/
+
+$default-radius: 4px;
+
+/* 
+6.  Link colours
+Make sure that the colours assigned here are assigned using the 
+colour variables above 
+*/
+
+// Menu bar
+$menu-color: $primary-color;
+$menu-link-color: #fff;
+$menu-link-hover-color: #fff;
+$menu-link-hover-background-color: darken($primary-color, 15%);
+
+// Footer
+$footer-color: $menu-color;
+$footer-link-color: $menu-link-color;
+$footer-link-hover-color: $menu-link-hover-color;
+$footer-link-hover-background-color: $menu-link-hover-background-color;
+
+/* 
+7.  Tables 
+*/
+
+$table-header-font-family: $font;
+$table-bgcolor: #fff;
+$table-thead-color: $font-color;
+$table-thead-bgcolor: $default-color;
+$table-border-size: 1px;
+$table-border-style: solid;
+$table-border-color: $color-emperor;
+$table-cell-border-size: 1px;
+$table-cell-border-color: $color-emperor;
+$table-cell-border-style: solid;
+
+/*  
+8.  Max page widths applied to container elements 
+*/
+
+$container-width: 1000px;
+$max-device-width: 2880px;
+$gutter: 30px;
+// Using bootstrap breakpoints
+$breakpoint-map: (
+  'xs':   0,          // XSmall up to Small.
+  'sm':   576px,      // Small up to Medium.
+  'md':   768px,      // Medium up to Large.
+  'lg':   992px,      // Large up to X-Large.
+  'xl':   $container-width  // X-Large and above.
+) !default;
+
+/*
+9. form colors
+*/
+$input-color: $color-dove-gray;
+$label-color: $color-emperor;
+

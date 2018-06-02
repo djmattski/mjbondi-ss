@@ -1,0 +1,174 @@
+//------------------------------------------------------------------
+// Mixins
+// -----------------------------------------------------------------
+
+@mixin icon($icon-name) {
+  &::before {
+    content: ' ';
+    display: block;
+    background: url('../images/logos_#{$icon-name}.svg') no-repeat center;
+    background-size: contain;
+    width: 50px;
+    height: 90px;
+    margin: -10px auto 10px;
+    @include respond(md) {
+      width: 104px;
+      height: 104px;
+      margin: -10px auto 10px;
+    }
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoint-map, $breakpoint) {
+    @media (min-width: #{map-get($breakpoint-map, $breakpoint)}) {
+      @content;
+    }
+  }
+}
+
+@mixin transition($transition...) {
+  @if length($transition) == 0 {
+    transition: $transition-base;
+  } @else {
+    transition: $transition;
+  }
+}
+
+@function col-width($fraction) {
+  @return $fraction * 100%;
+}
+
+@function calculate-context($target,$context) {
+  @return ($target / $context) * 100%;
+}
+
+
+@mixin pwidth($target, $context) {
+  width: ($target / $context) * 100%;
+}
+
+@mixin colu($target, $context, $float-direction: left) {
+  width: ($target / $context) * 100%;
+  float: $float-direction;
+}
+
+@mixin colp($percentage, $float-direction: left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+
+//------------------------------------------------------------------
+// Flex operations
+//------------------------------------------------------------------
+@mixin flex-display {
+  display: flex;
+}
+@mixin flex-align-center {
+  align-items: center;
+}
+@mixin flex-align-space-btw {
+  align-items: space-between;
+}
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
+@mixin justify-center {
+  justify-content: center;
+}
+@mixin justify-left {
+  justify-content: flex-start;
+}
+@mixin justify-right {
+  justify-content: flex-end;
+}
+@mixin space-in-between {
+  justify-content: space-between;
+}
+@mixin space-around {
+  justify-content: space-around;
+}
+@mixin flex-column {
+  flex-direction: column;
+}
+@mixin flex-row {
+  flex-direction: row;
+}
+@mixin flex1 {
+  flex: 1 0 auto;
+}
+@mixin be-flex {
+  @include flexDisplay;
+  @include flexColumn;
+  @media only screen and (min-width: map-get($breakpoint-map, 'md')) {
+    @include flexRow;
+    @include flexWrap;
+  }
+}
+
+
+
+// Aspect ratio
+/* .aspectRatio44 {
+  position: relative;
+  width: auto;
+  padding-bottom: 44%;
+  @include respond(xl) {
+    width: 100%;
+    margin: 0;
+  }
+}
+.aspectContent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+} */
+
+//------------------------------------------------------------------
+// Transitions
+//------------------------------------------------------------------
+@mixin transitions-all($time) {
+  transition: all $time ease;
+}
+@mixin transitions-color {
+  transition: color .3s ease;
+}
+@mixin transitions-background-color {
+  transition: background-color .5s ease;
+}
+@mixin transitions-opacity($time) {
+  transition: opacity $time ease;
+}
+@mixin transitions-height {
+  transition: height .5s ease;
+}
+@mixin transitions-width {
+  transition: width .5s ease;
+}
+@mixin transitions-padding {
+  transition: padding .2s ease;
+}
+@mixin transitions-transform($time) {
+  transition: transform $time ease;
+}
+
+// Before and After standard block
+
+@mixin before-after {
+  content: '';
+  position: absolute;
+}

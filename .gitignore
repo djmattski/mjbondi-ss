@@ -1,0 +1,14 @@
+# Misc
+*.DS_Store
+
+# Node
+*.log
+node_modules/
+
+# Silverstripe
+/silverstripe-cache/
+/.env
+/vendor/
+/themes/simple/
+/resources/
+/public/resources/
