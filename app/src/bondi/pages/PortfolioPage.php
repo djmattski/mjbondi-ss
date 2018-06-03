@@ -6,7 +6,6 @@ use \Page;
 
 class PortfolioPage extends Page
 {
-
     private static $table_name = 'PortfolfioPage';
     private static $singular_name = 'Portfolio Landing Page';
     private static $plural_name = 'Portfolio Landing Pages';
@@ -42,7 +41,7 @@ class PortfolioPage extends Page
         /*
         * New tab - Items
         */
-        if($this->ID) {
+        if ($this->ID) {
             $config = GridFieldConfig_RecordEditor::create();
             //$config->removeComponentsByType('GridFieldAddNewButton');
             $config->removeComponentsByType('GridFieldAddExistingAutoCompleter');
@@ -59,5 +58,4 @@ class PortfolioPage extends Page
 
         return $fields;
     }
-    
 }

@@ -12,5 +12,4 @@ class CategoryPage extends Page
     private static $has_many = [
       'PortfolioPages' => 'PortfolioPage'
     ];
-
 }
